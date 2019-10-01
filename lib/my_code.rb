@@ -10,16 +10,16 @@ end
 
 def reduce(source_array, starting_point= nil)
   if starting_point
-    result = starting_point
+    answer = starting_point
     i = 0
   else
-    result = source_array[0]
+    answer = source_array[0]
     i = 1
   end
 
   while source_array.length > i
-    result = yield(result, source_array[x])
+    answer = yield(answer, source_array[x])
     i += 1
   end
-result
+  answer
 end
