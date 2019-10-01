@@ -1,6 +1,25 @@
-def map(element1,&block) 
-  element1.map(&block)
+def map(source_array)
+  new_array = []
+  i = 0
+  while source_array.length > i do
+    new_array.push(yield(source_array[x]))
+    x += 1
   end
-def reduce(source_array, starting_point = 0, &block)
-  source_array.reduce(&block)
+  new_array
+end
+
+def reduce(source_array, starting_point= nil)
+  if starting_point
+    result = starting_point
+    x = 0
+  else
+    result = source_array[0]
+    x = 1
+  end
+
+  while source_array.length > x
+    result = yield(result, source_array[x])
+    x += 1
+  end
+result
 end
