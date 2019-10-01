@@ -11,15 +11,15 @@ end
 def reduce(source_array, starting_point= nil)
   if starting_point
     result = starting_point
-    x = 0
+    i = 0
   else
     result = source_array[0]
-    x = 1
+    i = 1
   end
 
-  while source_array.length > x
+  while source_array.length > i
     result = yield(result, source_array[x])
-    x += 1
+    i += 1
   end
 result
 end
