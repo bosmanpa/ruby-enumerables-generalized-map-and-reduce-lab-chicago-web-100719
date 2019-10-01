@@ -2,8 +2,8 @@ def map(source_array)
   new_array = []
   i = 0
   while source_array.length > i do
-    new_array.push(yield(source_array[x]))
-    x += 1
+    new_array.push(yield(source_array[i]))
+    i += 1
   end
   new_array
 end
